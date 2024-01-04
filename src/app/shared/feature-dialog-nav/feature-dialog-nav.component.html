@@ -1,0 +1,18 @@
+<div class="container h-100-p" fxLayout="column">
+  <div>
+    <button mat-icon-button style="float: right; margin: 8px;top: -20px;" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
+    <div fxFlex="40">
+      <img style="height: 280px; width: 400px;" [src]="imgSrc" alt="Image">
+    </div>
+    <div fxFlex="40" fxLayout="column" fxLayoutAlign="start start">
+      <h1><b>{{descriptionTitle}}</b></h1>
+      <span style="font-size: 16px;">{{description}}
+      </span>
+    </div>
+  </div>
+
+</div>

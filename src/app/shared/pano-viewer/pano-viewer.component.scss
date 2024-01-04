@@ -1,0 +1,214 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* If there is a fullscreen button the title bar must make space for it */
+
+body.fullscreen-enabled #titleBar {
+    right: 80px;
+}
+
+body.fullscreen-enabled.mobile #titleBar {
+    right: 100px;
+}
+
+/* If there are multiple scenes the title bar must make space for the scene list toggle */
+
+body.multiple-scenes #titleBar {
+    left: 40px;
+}
+
+body.multiple-scenes.mobile #titleBar {
+    left: 50px;
+}
+
+body.fullscreen-enabled #fullscreenToggle {
+    display: block;
+}
+
+/* If there is a fullscreen button, autorotate must placed a bit to the left */
+
+body.fullscreen-enabled #autorotateToggle {
+    right: 40px;
+}
+
+body.fullscreen-enabled.mobile #autorotateToggle {
+    right: 50px;
+}
+
+/* Hide scene list when only a single scene exists */
+
+body.single-scene #sceneList,
+body.single-scene #sceneListToggle {
+    display: none;
+}
+
+// View Control buttons
+body.view-control-buttons .viewControlButton {
+    display: block;
+}
+
+app-pano-viewer {
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -ms-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
+        -ms-content-zooming: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+    .loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        // background-color: #dddbe7;
+    }
+    .hide-loader {
+        visibility: hidden;
+        display: none;
+        opacity: 0;
+        transition: visibility 0s 1s, opacity 1s linear;
+    }
+    .pano {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* Link hotspot */
+    .link-hotspot {
+        // width: 60px;
+        height: 60px;
+        margin-left: -95px;
+        margin-top: -30px;
+        opacity: 0.9;
+        -webkit-transition: opacity 0.2s;
+        transition: opacity 0.2s;
+        text-align: center;
+    }
+    .no-touch .link-hotspot:hover {
+        opacity: 1;
+    }
+    .mobile .link-hotspot {
+        // width: 70px;
+        height: 70px;
+    }
+    .link-hotspot-icon {
+        // width: 100%;
+        // height: 100%;
+        height: 30px;
+        cursor: pointer;
+    }
+    .link-hotspot-tooltip {
+        position: absolute;
+        left: 100%;
+        top: 14px;
+        /* ( 60 - (16 + 2*8) ) / 2 */
+        margin-left: 3px;
+        font-size: 16px;
+        max-width: 300px;
+        padding: 8px 10px;
+        border-radius: 5px;
+        background-color: rgb(58, 68, 84);
+        background-color: rgba(58, 68, 84, 0.8);
+        color: #fff;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0;
+        -ms-transform: translateX(-8px);
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
+        -webkit-transition: -ms-transform 0.3s, -webkit-transform 0.3s, transform 0.3s, opacity 0.3s;
+        transition: -ms-transform 0.3s, -webkit-transform 0.3s, transform 0.3s, opacity 0.3s;
+    }
+    .hotspot-title {
+        width: 200px;
+        color: #fff;
+        font-weight: 700;
+        font-family: Montserrat;
+        position: relative;
+        font-size: 16px;
+        text-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+        letter-spacing: 2px;
+        word-spacing: 2px;
+    }
+    .mobile .link-hotspot {
+        top: 19px;
+        /* ( 70 - (16 + 2*8) ) / 2 */
+    }
+    .no-touch .link-hotspot:hover .link-hotspot-tooltip {
+        opacity: 1;
+        -ms-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    /* Prevent tooltip from triggering */
+    .link-hotspot-tooltip {
+        pointer-events: none;
+    }
+    .no-touch .link-hotspot:hover .link-hotspot-tooltip {
+        pointer-events: all;
+    }
+    /* Fallback mode without pointer-events (IE8-10) */
+    .tooltip-fallback .link-hotspot-tooltip {
+        display: none;
+    }
+    .no-touch .tooltip-fallback .link-hotspot:hover .link-hotspot-tooltip {
+        display: block;
+    }
+
+    /* Hide controls when width is too small */
+    @media screen and (orientation: landscape) and (min-width: 550px) and (max-width: 950px) {
+        .link-hotspot-icon {
+            height: 20px;
+        }
+        .hotspot-title {
+            width: 145px;
+            font-size: 14px;
+            text-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+            letter-spacing: 1px;
+            word-spacing: 1px;
+        }
+        .link-hotspot {
+            margin-left: -70px !important;
+            margin-top: -25px !important;
+        }
+    }
+    @media (max-width: 600px) {
+        body.view-control-buttons .viewControlButton {
+            display: none;
+        }
+    }
+}

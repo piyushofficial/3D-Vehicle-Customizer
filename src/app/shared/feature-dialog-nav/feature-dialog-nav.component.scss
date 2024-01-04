@@ -1,0 +1,44 @@
+app-feature-dialog-nav {
+  .dialog-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    margin-bottom: 20px;
+  }
+  .dialog-image {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 38px;
+  }
+  .dialog-content {
+    flex: 1;
+    max-width: 50%;
+    margin-bottom: 35px;
+    font-family: "Montserrat";
+    color: #312e43;
+    font-size: 15px;
+    margin-top: 38px;
+    left: 2px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .dialog-container {
+      flex-direction: column;
+    }
+    .dialog-image {
+      max-width: 100%;
+      margin-right: 0;
+    }
+    .dialog-content {
+      max-width: 100%;
+    }
+  }
+}
+.cdk-overlay-pane {
+  height: 60% !important;
+  width: 60% !important;
+}

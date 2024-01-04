@@ -1,0 +1,10 @@
+app-showroom {
+    .container {
+        .view-details {
+            position: absolute;
+            bottom: 50px;
+            left: 50vw;
+            z-index: 5;
+        }
+    }
+}

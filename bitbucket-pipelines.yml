@@ -1,0 +1,30 @@
+--- # -----
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# image: node:12.18.2-stretch
+
+# pipelines:
+#   branches:
+#     release/qa:
+#       - step:
+#           caches:
+#             - node
+#           script: # Modify the commands below to build your repository.
+#             - npm install
+#             - npm install -g bestzip
+#             - npm install -g move-file-cli
+#             - npm install -g @angular/cli@9.1.9
+#             - ng build --prod
+#             - bestzip ./dist/app.zip ./dist/app
+#             - move-file ./dist/app.zip ./dist/app/app.zip
+#             - buildVersion=$(node -p "require('./package.json').version")
+#             - uploadAt="bitbucket-project-builds/ey-exim/frontend/$buildVersion"
+#             - toUpload='./dist/app'
+#             - pipe: atlassian/aws-s3-deploy:0.4.4
+#               variables:
+#                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # Optional if already defined in the context.
+#                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY # Optional if already defined in the context.
+#                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION # Optional if already defined in the context.
+#                 S3_BUCKET: $uploadAt
+#                 LOCAL_PATH: $toUpload
+#                 # DEBUG: 'true' # Optional.

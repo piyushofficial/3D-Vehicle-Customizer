@@ -1,0 +1,160 @@
+// // Typography
+// // Fonts
+// // @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap");
+// @font-face {
+//     font-family: 'Interstate_Bold';
+//     src: url('../assets/fonts/EY_Interstate/EYInterstate-Bold.ttf') format('truetype');
+//     font-weight: bold;
+//     font-style: normal;
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Interstate_Light';
+//     src: url('../assets/fonts/EY_Interstate/EYInterstate-Light.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Interstate_Regular';
+//     src: url('../assets/fonts/EY_Interstate/EYInterstate-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Interstate_Lightbold';
+//     src: url('../assets/fonts/EY_Interstate/EYInterstate-LightBold.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+// // Sizes
+// $base-font-size: 12px;
+// $base-line-height: 1;
+// .special-font {
+//     font-family: 'Interstate_Regular', sans-serif;
+// }
+// .typo-base {
+//     font-size: $base-font-size;
+//     line-height: $base-line-height;
+//     font-weight: 400;
+//     font-family: 'Interstate_Regular', sans-serif;
+// }
+// .typo-heading-1 {
+//     @extend .special-font;
+//     font-size: 1.5rem;
+//     line-height: $base-line-height * 2;
+//     font-weight: 400;
+// }
+// .typo-heading-2 {
+//     @extend .special-font;
+//     font-size: 1.25rem;
+//     line-height: $base-line-height * 2;
+//     font-weight: 400;
+//     font-family: "Comfortaa", sans-serif;
+// }
+// .typo-heading-3 {
+//     font-size: 1.125rem;
+//     line-height: $base-line-height * 2;
+//     font-weight: 400;
+//     font-family: "Comfortaa", sans-serif;
+// }
+// .typo-heading-4 {
+//     @extend .special-font;
+//     font-size: 1rem;
+//     line-height: $base-line-height;
+//     font-weight: 600;
+//     font-family: "Comfortaa", sans-serif;
+// }
+// .typo-heading-5 {
+//     @extend .special-font;
+//     font-size: 1.125rem;
+//     line-height: $base-line-height;
+//     font-weight: 600;
+//     font-family: "Interstate_Regular", sans-serif;
+// }
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../assets/fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Montserrat-Medium";
+    src: url("../assets/fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url("../assets/fonts/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../assets/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Open-Sans-Light";
+    src: url("../assets/fonts/opensans/OpenSans-Light.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Open-Sans-Regular";
+    src: url("../assets/fonts/opensans/OpenSans-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Open-Sans-Medium";
+    src: url("../assets/fonts/opensans/OpenSans-Medium.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Open-Sans-SemiBold";
+    src: url("../assets/fonts/opensans/OpenSans-SemiBold.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Open-Sans-Bold";
+    src: url("../assets/fonts/opensans/OpenSans-Bold.ttf") format("truetype");
+    font-display: swap;
+  }
+.montserrat-regular{
+    font-family: 'Montserrat-Regular';
+  }
+  
+  .montserrat-medium{
+    font-family: 'Montserrat-Medium';
+  }
+  .montserrat-semibold{
+    font-family: 'Montserrat-SemiBold';
+  }
+  .montserrat-Bold{
+    font-family: 'Montserrat-Bold';
+  }
+  .open-sans-light{
+    font-family: 'Open-Sans-Light';
+  }
+  .open-sans-regular{
+    font-family: 'Open-Sans-Regular';
+  }
+  .open-sans-medium{
+    font-family: 'Open-Sans-Medium';
+  }
+  .open-sans-semibold{
+    font-family: 'Open-Sans-SemiBold';
+  }
+  .open-sans-bold{
+    font-family: 'Open-Sans-Bold';
+  }
+  .montserrat-Bold-italic{
+    font-family: 'Montserrat-Bold';
+    font-style: italic;
+  }
+  .montserrat-italic{
+    font-family: 'Montserrat-Medium';
+    font-style: italic;
+  }

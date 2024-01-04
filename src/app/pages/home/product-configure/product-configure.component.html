@@ -1,0 +1,97 @@
+<div [ngClass]="!showLoader ? 'main-container':'hide-container'">
+    <mat-drawer-container>
+        <mat-drawer mode="side" opened [ngStyle]="{'width':toggleSidenav ? 'auto' : '0px'}">
+            <div fxLayout="column" class="sidenav-container h-100-p">
+                <div fxLayout="row" fxLayoutAlign="center center" class="m-20 sidenav-headers-container">
+                    <div class="sidenav-headers montserrat-medium">Customizations</div>
+                    <div (click)="toggleSidenav=false" class="cursor ml-20">
+                        <img src="../../../../assets/images/close.png" alt="close_icon">
+                    </div>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="start" class="h-100-p">
+                    <div>
+                        <div fxLayout="row" fxLayoutAlign="start start" class="list-container ml-30 mt-20">
+                            <div>
+                                <img src="assets/images/Group 17.svg" alt="">
+                            </div>
+                            <div fxLayout="column" class="ml-20 ">
+                                <div class="display-name montserrat-medium">Color</div>
+                                <div fxLayout="row" class="mt-20">
+                                    <div *ngFor="let itemValue of customizationsColorData;let i = index " class="mr-12">
+                                        <img style="cursor: pointer;" class="image-container"
+                                            [ngClass]="{'selected-option': selectedColorValue == i}"
+                                            (click)="onCustomizationsColor(itemValue, i)" src={{itemValue.icon}} alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div fxLayout="row" fxLayoutAlign="start start" class="list-container ml-30 mt-20">
+                            <div>
+                                <img src="assets/images/Group 16.svg" alt="">
+                            </div>
+                            <div fxLayout="column" class="ml-20 ">
+                                <div class="display-name montserrat-medium">Wheels</div>
+                                <div fxLayout="row" class="mt-20">
+                                    <div *ngFor="let itemValue of customizationsRimData;let i = index " class="mr-12">
+                                        <img style="cursor: pointer;" class="image-container"
+                                            [ngClass]="{'selected-option': selectedWheel == i}"
+                                            (click)="onCustomizationsWheels(itemValue,i)" src={{itemValue.icon}} alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div fxLayout="row" fxLayoutAlign="start start" class="list-container ml-30 mt-20">
+                            <div>
+                                <img src="assets/images/Group 14.svg" alt="">
+                            </div>
+                            <div fxLayout="column" class="ml-20 ">
+                                <div class="display-name montserrat-medium">Spoiler</div>
+                                <div fxLayout="row" class="mt-20">
+                                    <div *ngFor="let itemValue of customizationsSpoilerData;let i = index "
+                                        class="mr-12">
+                                        <img style="cursor: pointer;" class="spoiler-container"
+                                            [ngClass]="{'spoiler-selected-option':spoilerAdded == false}"
+                                            (click)="onCustomizationsSpoiler(itemValue,i)" src={{itemValue.icon}}
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content [ngStyle]="{'margin-left':toggleSidenav ? '248px' : '0px'}">
+            <!-- <button style="float: right;" (click)="getCameraPosition()">camera position</button> -->
+            <div id='container'></div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+    <ng-container *ngIf="!interiorView">
+        <div class="sticky-actions" fxLayout="column" fxLayoutAlign="center center" *ngIf="!toggleSidenav">
+            <img (click)="onClickSidenav()" class="mv-10" src="../../../../assets/images/sidenav.png" alt="sidenav_img">
+            <img (click)="addLights();"
+                [src]="toggleLights ? '../../../../assets/images/headlights-off.png' :'../../../../assets/images/headlights-on.png'"
+                alt="headlights_img">
+        </div>
+    </ng-container>
+    <div class="view-toggle ml-30 mb-20" *ngIf="!toggleSidenav">
+        <mat-button-toggle-group (change)="onToggleView($event)" value="exterior">
+            <mat-button-toggle class="w-100-p" value="exterior">Exterior</mat-button-toggle>
+            <mat-button-toggle class="w-100-p" value="interior">Interior</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="sticky-cta-container h-100-p" *ngIf="showStickyCTA">
+        <app-sticky-cta></app-sticky-cta>
+    </div>
+    <!-- <audio autoplay loop *ngIf="interiorView">
+        <source src="../../../../assets/images/tarzan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio> -->
+</div>
+<div *ngIf="showLoader" class="loader-contaner">
+    <app-loader></app-loader>
+</div>

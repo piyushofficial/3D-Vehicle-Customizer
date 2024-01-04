@@ -1,0 +1,294 @@
+// Custom Theming for Angular Material
+@use '~@angular/material' as mat;
+// For more information: https://material.angular.io/guide/theming
+@import "./typography.scss";
+@import "./theme/theme.scss";
+@import "./helper.scss";
+@import "./swiper.css";
+// __<<ngThemingMigrationEscapedComment0>>__
+// @import "./formly-css/formly-fields.css";
+// __<<ngThemingMigrationEscapedComment1>>__
+// @import "./table-css/table.scss";
+// // Custom Search field
+// @import "./search-field-css/search-field.scss";
+// __<<ngThemingMigrationEscapedComment2>>__
+// @import "../../node_modules/c3/c3.min.css";
+// __<<ngThemingMigrationEscapedComment3>>__
+// @import "./task-css/task-review.scss";
+// __<<ngThemingMigrationEscapedComment4>>__
+// @import "./task-css/task-upload.scss";
+// __<<ngThemingMigrationEscapedComment5>>__
+// @import "./summary-scss/summary.scss";
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary: mat.define-palette($mdc-theme-primary, 900);
+$app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$app-warn: mat.define-palette(mat.$deep-orange-palette);
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat.define-light-theme($app-primary, $app-accent, $app-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($app-theme);
+//@include mat-button-theme($app-theme);
+// Dark theme
+$dark-primary: mat.define-palette(mat.$grey-palette, 900);
+$dark-accent: mat.define-palette(mat.$amber-palette);
+$dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$dark-theme: mat.define-dark-theme($dark-primary, $dark-accent, $dark-warn);
+.dark-theme {
+    @include mat.all-component-themes($dark-theme);
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+
+//variables
+$scrollbar-track-color: #ffffff00;
+$scrollbar-track-hover-color: #ffffff;
+$scrollbar-thumb-color: #707070;
+//Common Dialog
+$common-dialog-shadow-color: #00000061;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    // @extend .typo-base;
+    @include scrollbars(7px, 30px, $scrollbar-thumb-color, $scrollbar-track-color);
+     ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        scroll-behavior: smooth;
+    }
+     ::-webkit-scrollbar-track {
+        background: $scrollbar-track-color;
+        border-radius: 30px;
+        transition: 0.3s;
+    }
+     ::-webkit-scrollbar-track:hover {
+        background: $scrollbar-track-hover-color;
+        transition: 0.3s;
+    }
+     ::-webkit-scrollbar-thumb {
+        background: $scrollbar-thumb-color;
+        border-radius: 30px;
+    }
+    // // Common Dialog CSS
+    // $secondary-dialog-border-color: #e1e1e6;
+    // $secondary-dialog-bgColor: #747480;
+    // $secondary-dialog-color: #ffffff;
+    // .custom-common-dialog {
+    //     .mat-dialog-container {
+    //         border-radius: 0px;
+    //         padding: 0px;
+    //         box-shadow: 0 0 3px $common-dialog-shadow-color;
+    //     }
+    //     .secondary-dialog-container {
+    //         .secondary-dialog-header {
+    //             font-size: large;
+    //             font-weight: normal;
+    //             border-bottom: 1px solid $secondary-dialog-border-color;
+    //             padding: 15px;
+    //             background-color: $secondary-dialog-bgColor;
+    //             color: $secondary-dialog-color;
+    //             .close-sidenav {
+    //                 cursor: pointer;
+    //             }
+    //         }
+    //         .secondary-dialog-content {
+    //             overflow-y: auto;
+    //             padding-top: 15px;
+    //             padding-left: 15px;
+    //             [class*="col-"] {
+    //                 padding-left: 0;
+    //             }
+    //         }
+    //         .secondary-dialog-footer {
+    //             padding: 15px;
+    //             border-top: 1px solid $secondary-dialog-border-color;
+    //             display: flex;
+    //             justify-content: flex-end;
+    //             .footer-action-btn {
+    //                 button {
+    //                     margin-left: 10px;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // .custom-exit-alert-dialog {
+    //     .mat-dialog-container {
+    //         border-radius: 0px;
+    //         padding: 0px;
+    //     }
+    // }
+}
+
+.custom-create-request-dialog {
+    .mat-dialog-container {
+        border-radius: 0px;
+        padding: 0px;
+        box-shadow: 0 0 3px #00000061;
+    }
+}
+
+.cdk-global-scrollblock {
+    overflow-y: hidden !important;
+}
+
+// TODO: update needed
+// primary buttons
+.mat-primary {
+    &[disabled] {
+        border: 1px solid #bebebe;
+        height: 28px;
+        line-height: 25px;
+    }
+    &.mat-icon-button {
+        border: 0px;
+    }
+    &.mat-stroked-button {
+        border-radius: 0px;
+        border: 1px solid #555;
+        height: 28px;
+        line-height: 25px;
+    }
+    &.mat-raised-button[disabled] {
+        background-color: #fff;
+        border: none;
+        height: 28px;
+        line-height: 25px;
+    }
+    &.mat-raised-button {
+        border-radius: 0px;
+        box-shadow: none;
+        background-color: #081835;
+        color: #ffffff;
+        height: 28px;
+        line-height: 25px;
+    }
+    &.mat-raised-button:focus,
+    .mat-raised-button:active:focus,
+    .mat-raised-button.active:focus {
+        outline: none !important;
+        outline-style: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.dark-theme {
+    $scrollbar-track-color: #707070;
+    $scrollbar-track-hover-color: #707070;
+    $scrollbar-thumb-color: #efefef;
+     ::-webkit-scrollbar-track {
+        background: $scrollbar-track-color;
+        border-radius: 30px;
+        transition: 0.3s;
+    }
+     ::-webkit-scrollbar-track:hover {
+        background: $scrollbar-track-hover-color;
+        transition: 0.3s;
+    }
+     ::-webkit-scrollbar-thumb {
+        background: $scrollbar-thumb-color;
+        border-radius: 30px;
+    }
+}
+
+.profile-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #989898;
+}
+
+.btn-loader {
+    margin-left: 10px;
+}
+
+// Tooltip Classes
+// .complete-file-name-width-tooltip {
+//     max-width: unset !important;
+// }
+//mat-tab classes
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #2e2e38;
+}
+
+// anchor css
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+
+// //Secondary Header Common CSS
+// $secondary-header-bgColor: #f6f6fa;
+// $secondary-header-color: #1a1a24;
+// .secondary-header {
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 10px 20px;
+//     height: 60px;
+//     background-color: $secondary-header-bgColor;
+//     .secondary-header-title {
+//         display: flex;
+//         justify-content: flex-start;
+//         align-items: center;
+//         font-weight: bold;
+//         color: $secondary-header-color;
+//         letter-spacing: 0px;
+//         font-size: 15px;
+//     }
+//     .secondary-header-action {
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//         mat-icon {
+//             cursor: pointer;
+//             outline: none;
+//         }
+//         button {
+//             .mat-button-focus-overlay {
+//                 opacity: 0;
+//             }
+//         }
+//     }
+// }
+// //Secondary Filter Common CSS
+// .secondary-filter-container {
+//     .secondary-filter-header {
+//         padding: 13px 20px 13px 20px;
+//         border-bottom: 0.2px solid #e1e1e6;
+//         .filter-header {
+//             .filter-title {
+//                 font-size: 14px;
+//             }
+//         }
+//         .close-filter {
+//             cursor: pointer;
+//         }
+//     }
+//     .secondary-filter-formly {
+//         width: 323px;
+//         overflow-y: auto;
+//         height: calc(100vh - 175px);
+//         padding: 15px 10px 0 5px;
+//     }
+//     .secondary-filter-footer {
+//         margin-top: 5px;
+//         padding: 20px 20px 10px 20px;
+//         border-top: 0.2px solid #e1e1e6;
+//     }
+// }

@@ -1,0 +1,57 @@
+
+<div class="dialog-action" (click)="closeDialog()">
+  <img src="../../../../assets/images/close.png" alt="cross-icon">
+</div>
+<div class="container m-3 p-4">
+  <h2>Registration Form</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="First Name*" formControlName="firstName" required>
+        <mat-error *ngIf="registrationForm.get('firstName').errors?.required">
+          Required
+        </mat-error>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Last Name*" formControlName="lastName" required/>
+        <mat-error *ngIf="registrationForm.get('lastName').errors?.required">
+          Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput type="tel" placeholder="Mobile*" formControlName="mobile" required>
+        <mat-error *ngIf="registrationForm.get('mobile').errors?.required">
+          Required
+        </mat-error>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput type="email" placeholder="Email*" formControlName="email" required>
+        <mat-error *ngIf="registrationForm.get('email').errors?.required">
+          Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="City*" formControlName="city" required>
+        <mat-error *ngIf="registrationForm.get('city').errors?.required">
+          Required
+        </mat-error>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="State*" formControlName="state" required>
+        <mat-error *ngIf="registrationForm.get('state').errors?.required">
+          Required
+        </mat-error>
+      </mat-form-field>
+    </div><br>
+    <div class="subbtn">
+      <button class="btn" mat-raised-button color="primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

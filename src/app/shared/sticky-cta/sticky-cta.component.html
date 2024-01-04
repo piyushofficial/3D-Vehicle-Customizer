@@ -1,0 +1,15 @@
+<div class="container h-100-p">
+    <div class="h-95-p" fxLayout="column" fxLayoutAlign="space-between start">
+        <div class="action-btn w-100-p" fxLayout="column">
+            <ng-container *ngFor="let item of actionButtonContent ; let i=index">
+                <!-- <a href={{item.redirectTo}} >{{item.title}}</a> -->
+                <button class="cursor" (click)="onClickCTA(i)">{{item.title}}</button>
+            </ng-container>
+        </div>
+        <div class="footer-action-btn">
+            <ng-container *ngFor="let item of footerActionContent; let i = index">
+                <button (click)="openDialog(i)" class="mv-10" mat-raised-button color="primary">{{item.title}}</button>
+            </ng-container>
+        </div>
+    </div>
+</div>

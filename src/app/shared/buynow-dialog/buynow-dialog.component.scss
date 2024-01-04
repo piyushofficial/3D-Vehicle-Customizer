@@ -1,0 +1,34 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  display: contents;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center; 
+}
+.form-row {
+  display: flex;
+}
+.form-field {
+  flex: 1;
+  margin-right: 22px;
+  max-width: 100%; 
+}
+.dialog-action img {
+  width: 20px;
+  height: 20px;
+  float: right;
+  cursor: pointer;
+}
+.subbtn {
+  display: flex;
+  justify-content: space-around;
+}
+.btn {
+  border-radius: 15px;
+  min-width: 28%;
+  height: 34px;
+}
+

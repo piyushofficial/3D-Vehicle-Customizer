@@ -1,0 +1,88 @@
+/* Build a Material theme */
+@use '~@angular/material' as mat;
+// To begin customizing your theme, modify these variables. By default each theme starts off with our baseline values, so you can easily swap them out.
+// Line no 11 sans-serif removed as EY team expected to keep only Interstate_Regular
+
+/*  Typography */
+$mdc-typography-font-family: unquote("Interstate_Regular, sans-serif");
+
+
+$app-typography: mat.define-typography-config(
+  $font-family: "Interstate_Regular",
+  $display-4: mat.define-typography-level(112px, 112px, 300),
+  $display-3: mat.define-typography-level(56px, 56px, 400),
+  $display-2: mat.define-typography-level(45px, 48px, 400),
+  $display-1: mat.define-typography-level(34px, 40px, 400),
+  $headline: mat.define-typography-level(24px, 32px, 400, "Interstate_Regular, sans-serif"),
+  $title: mat.define-typography-level(20px, 32px, 500, "Interstate_Regular, sans-serif"),
+  $subheading-2: mat.define-typography-level(16px, 28px, 400, "Interstate_Regular, sans-serif"),
+  $subheading-1: mat.define-typography-level(15px, 24px, 400, "Interstate_Regular, sans-serif"),
+  $body-2: mat.define-typography-level(13px, 20px, 600),
+  $body-1: mat.define-typography-level(13px, 20px, 400),
+  $caption: mat.define-typography-level(13px, 20px, 400),
+  $button: mat.define-typography-level(14px, 1, 700, "Interstate_Regular, sans-serif"),
+  $input: mat.define-typography-level(13px, 1.25, 400),
+);
+
+@include mat.core($app-typography);
+
+/* Shape */
+// The shapes of small, medium, and large components can be themed by overriding the default values. We recommend using our shape customization tool to help you pick your radius values. https://material.io/design/shape/about-shape.html#shape-customization-tool
+
+$mdc-shape-small-component-radius: 20px;
+$small-component-radius: 20px;
+$mdc-shape-medium-component-radius: 4px;
+$mdc-shape-large-component-radius: 0px;
+
+/* Color */
+// To change your theme's color scheme, replace the existing HEX color values with custom HEX color values. Use our color palette generator to help come up with pairings and check your color contrast. https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+
+// Primary colors ($mdc-theme-primary) map to components such as app bars and buttons, while secondary colors ($mdc-theme-secondary) are used as accents on components such as FABs and selection controls.
+
+// $mdc-theme-primary: #DC4D51;
+$mdc-theme-secondary: #9e3a3d;
+$mdc-theme-primary: (
+  50: #f9ecf0,
+  100: #f3d0d8,
+  200: #de9fa6,
+  300: #d07d85,
+  400: #da616b,
+  500: #df5559,
+  600: #cf4d55,
+  700: #bd454d,
+  800: #af4047,
+  900: #555,
+  A100: #dc4d51,
+  A200: #dc4d51,
+  A400: #dc4d51,
+  A700: #dc4d51,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ),
+);
+
+// Theme background ($mdc-theme-background) appears behind scrollable content. Surface color ($mdc-theme-surface) is mapped to the surface of components such as cards, sheets, and menus. Error color ($mdc-theme-error) is used to indicate an error state for components such as text fields provided with inaccurate input.
+
+// $mdc-theme-surface: #ffffff;
+// $mdc-theme-background: #ffffff;
+// $mdc-theme-error: #b00020;
+
+// “On-” colors define how text, icons, and strokes are colored in relation to the surface on which they appear. If you are updating these manually, be sure to consider accessible color contrast for the value pairs.
+
+// $mdc-theme-on-primary: #ffffff;
+// $mdc-theme-on-secondary: #ffffff;
+// $mdc-theme-on-error: #ffffff;
+// $mdc-theme-on-surface: #000000;

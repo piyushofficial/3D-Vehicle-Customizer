@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://d1fwym6igs527s.cloudfront.net",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }
+  

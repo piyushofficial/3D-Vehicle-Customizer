@@ -1,0 +1,25 @@
+app-common-dialog {
+    .container {
+        .cdk-overlay-pane {
+            align-self: center;
+        }
+        .dialog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .dialog-action {
+                cursor: pointer;
+            }
+            .dialog-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                color: #000;
+            }
+        }
+    }
+}
+.cdk-overlay-pane {
+    height: auto !important;
+    width: auto !important;
+}
